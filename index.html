@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Furniture.com</title>
+  <link rel="stylesheet" href="styles.css">
+
+  
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery CDN -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+
+
+</head>
+<body>
+  <!-- Placeholder for dynamic header -->
+  <header>
+    <div class="header">
+      <div class="header-top">
+          <div class="header-links">
+        <a href="#" class="header-link bold">Plan Your Black Friday With Deal Finder </a>
+        <a href="#" class="header-link">The easiest way to find deals <span> <i class="fa-solid fa-arrow-right fa-lg" style="color: #ffffff;"></i></span></a>
+      </div>
+        <div class="separator"></div>
+        <div class="header-links">
+          <a href="#" class="header-link bold">Find It on Black Friday </a>
+          <a href="#" class="header-link">Get a sneek peak at the big sale <span> <i class="fa-solid fa-arrow-right fa-lg" style="color: #ffffff;"></i></span></a>
+        </div>      <div class="separator"></div>
+        <div class="header-links">
+          <a href="#" class="header-link bold">The Ultimate Mattress Sale </a>
+          <a href="#" class="header-link">Upto 60% off for Black Friday <span> <i class="fa-solid fa-arrow-right fa-lg" style="color: #ffffff;"></i></span></a>
+        </div>    </div>
+      <div class="header-bottom">
+      
+        <div class="logo">
+         
+          <img src="./assets/logo.png" alt="">
+      </div>
+      <div class="search-bar-wrapper">
+          <i class="fa fa-search"></i>
+          <input type="text" class="search-bar" placeholder="Find it..." />
+      </div>
+      
+      <div class="location">
+          <i class="fa-regular fa-paper-plane" style="color: #007a78;"></i>
+          <span>Are you shopping in <a href="#">Reston, VA</a>?</span>
+        </div>
+      
+    </div>
+    
+  </header>
+  <div id="navbar-container">
+    <div>
+
+ 
+      <nav class="navbar">
+        <ul class="nav-menu">
+          <li class="nav-item" data-menu="deal-finder">
+            <a href="#">Deal Finder</a>
+            <div class="dropdown-section"></div>
+          </li>
+          <li class="nav-item" data-menu="furniture">
+            <a href="#">Furniture</a>
+            <div class="dropdown-section"></div>
+          </li>
+          <li class="nav-item" data-menu="mattresses">
+            <a href="#">Mattresses</a>
+            <div class="dropdown-section"></div>
+          </li>
+          <li class="nav-item" data-menu="dining">
+            <a href="#">Dining</a>
+            <div class="dropdown-section"></div>
+          </li>
+          <li class="nav-item" data-menu="homeoffice">
+            <a href="#">Home Office</a>
+            <div class="dropdown-section"></div>
+          </li>
+          <li class="nav-item" data-menu="outdoor">
+            <a href="#">Outdoor</a>
+            <div class="dropdown-section"></div>
+          </li>
+          <li class="nav-item" data-menu="rugs">
+            <a href="#">Rugs & Decor</a>
+            <div class="dropdown-section"></div>
+          </li>
+          <li class="nav-item" data-menu="baby">
+            <a href="#">Baby & Kids</a>
+            <div class="dropdown-section"></div>
+          </li>
+          <li class="nav-item" data-menu="friday">
+            <a href="#">Black Friday Sale</a>
+            <div class="dropdown-section"></div>
+          </li>
+          <li class="nav-item" data-menu="holidays">
+            <a href="#">Holidays</a>
+            <div class="dropdown-section"></div>
+          </li>
+          <li class="nav-item" data-menu="inspiration">
+            <a href="#">Inspiration</a>
+            <!-- <div class="dropdown-section"></div> -->
+          </li>
+        </ul>
+       
+      </nav>
+      <div class="dropdown-container">
+        <div class="dropdown-content">
+          <div class="left-menu"></div>
+          <div class="middle-content"></div>
+          <div class="right-content"></div>
+        </div>
+      </div>
+    </div>
+    
+
+  </div>
+  <div id="navbar-placeholder">
+    <div class="headerp-container">
+
+  
+      <div class="location-p">
+        <i class="fa-regular fa-paper-plane" style="color: #007a78;"></i>
+        <span>shopping in <a style="color: #000000;" href="#">Reston, VA</a>?</span>
+      </div>
+      <div class="header-p">
+        <div class="logo-p">
+           
+            <img src="./assets/logo.png" style="width: 160px;" alt="">
+        </div>
+        <div class="actions">
+          <div class="icons">
+            <button class="menu-icon">☰</button>
+          </div>
+        </div>
+      </div>
+      <div class="search-bar-wrapper-p">
+        <i class="fa fa-search"></i>
+        <input type="text" class="search-bar-p" placeholder="Find it..." />
+    </div>
+    </div>
+    
+      <!-- Main Container -->
+      <div class="fullscreen-menu" id="fullscreen-menu">
+        <!-- Screen 2 (Menu Options) -->
+        <div class="menu-screen" id="menu-screen">
+          <button class="close-button"><i class="fa-solid fa-xmark" style="color: #000000;"></i></button>
+         
+          <ul>
+            <li data-content="dealFinder">Deal Finder <i class="fa-solid fa-chevron-right" style="color: #000000;"></i></li>
+            <li data-content="furniture">Furniture <i class="fa-solid fa-chevron-right" style="color: #000000;"></i></li>
+            <li data-content="living">Living <i class="fa-solid fa-chevron-right" style="color: #000000;"></i></li>
+            <li data-content="bedroom">Bedroom <i class="fa-solid fa-chevron-right" style="color: #000000;"></i></li>
+            <li data-content="Mattresses">Mattresses <i class="fa-solid fa-chevron-right" style="color: #000000;"></i></li>
+            <li data-content="Dining">Dining <i class="fa-solid fa-chevron-right" style="color: #000000;"></i></li>
+            <li data-content="Home Office">Home Office <i class="fa-solid fa-chevron-right" style="color: #000000;"></i></li>
+            <li data-content="Outdoor">Outdoor <i class="fa-solid fa-chevron-right" style="color: #000000;"></i></li>
+            <li data-content="Rugs & Decor">Rugs & Decor <i class="fa-solid fa-chevron-right" style="color: #000000;"></i></li>
+            <li data-content="Black Fiday Sale">Black Fiday Sale <i class="fa-solid fa-chevron-right" style="color: #000000;"></i></li>
+            <li data-content="Holidays">Holidays <i class="fa-solid fa-chevron-right" style="color: #000000;"></i></li>
+            <li data-content="Inspiration">Inspiration <i class="fa-solid fa-chevron-right" style="color: #000000;"></i></li>
+          </ul>
+        </div>
+    
+        <!-- Screen 1 (Content for Selected Option) -->
+        <div class="content-screen" id="content-screen">
+          <button class="back-button"><i class="fa-solid fa-chevron-left fa-xs" style="color: #000000;"></i>Back</button>
+          <h2 id="content-title">Deal Finder</h2>
+          <div id="content-area">
+            <p>Shop By Style</p>
+            <ul>
+              <li>Mid Century Modern</li>
+              <li>Coastal</li>
+              <li>Traditional</li>
+              <li>Glam</li>
+              <li>Modern</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+  </div>
+  <div id="popular-content">
+    <div class="popular-container">
+      <div class="popular-heading">Shop Popular Furniture</div>
+      <div class="popular-slider">
+        <!-- Images will be dynamically added by jQuery -->
+      </div>
+    </div>
+  </div>
+
+  <!-- whats-new-section  -->
+
+  <div class="center-align">
+
+
+  <div id="whats-new-section">
+    <div class="whats-new-container">
+      <div class="new-text">
+          <p class="new-heading">What's New for Holiday</p>
+          <button class="btn">Get Inspired</button>
+      </div>
+  
+      <div class="upper-layer-phone">
+          <div class="first-layer">
+              <img src="./assets/hpc1.jpeg"  alt="">
+              <div class="second-layer">
+                  <div class="third-layer">
+                      <img src="./assets/hpc2.jpeg"   alt="" >
+                      <img src="./assets/hpc3.jpeg"  alt="">
+  
+                  </div>
+                  <div class="fourth-layer">
+                      <img src="./assets/hpc4.jpeg" style="max-width: 200px;"  alt="">
+                  </div>
+              </div>
+  
+          </div>
+      </div>
+  
+      <div class=" upper-layer">
+          <div class="whats-new-card">
+              <a href="#" class="link">
+              <img class="image-size" src="./assets/converted_image.jpeg" alt="Black Friday">
+              <div class="content">
+                <div class="label">Sale</div>
+                <p class="text">Save Up to 60% on Mattresses, Sofas, and More Big Ticket Items</p>
+               
+              </div>
+              </a>
+            </div>
+            <div class="whats-new-card">
+              <a href="#" class="link">
+              <img class="image-size" src="./assets/converted_image (1).jpeg" alt="Black Friday">
+              <div class="content">
+                <div class="label">New</div>
+                <p class="text">Find the Biggest Furniture Markdowns Across All Brands</p>
+               
+              </div>
+              </a>
+            </div>
+            <div class="whats-new-card">
+              <a href="#" class="link">
+              <img class="image-size" src="./assets/converted_image (2).jpeg" alt="Black Friday">
+              <div class="content">
+                <div class="label">Featured</div>
+                <p class="text">Classic and Unfussy: 6 Modern Table Setting Tips From Mathis Home</p>
+               
+              </div>
+              </a>
+            </div>
+            <div class="whats-new-card">
+              <a href="#" class="link">
+              <img class="image-size" src="./assets/converted_image (3).jpeg" alt="Black Friday">
+              <div class="content">
+                <div class="label">Featured</div>
+                <p class="text">Treat your overnight guests to unparalleled comfort and grownup style</p>
+               
+              </div>
+              </a>
+            </div>
+      </div>
+      
+      <div class="cards-layer lower-layer">
+          <div class="whats-new-card">
+              <a href="#" class="link">
+              <img class="image-size" src="./assets/converted_image (4).jpeg" alt="Black Friday">
+              <div class="content">
+                <div class="label">Featured</div>
+                <p class="text">An Elevated Dining Collection Designed To Wow Your Dinner Party Guests</p>
+               
+              </div>
+              </a>
+            </div>
+            <div class="whats-new-card">
+              <a href="#" class="link">
+              <img class="image-size" src="./assets/converted_image (5).jpeg" alt="Black Friday">
+              <div class="content">
+                <div class="label">Gift Guides</div>
+                <p class="text">Editor’s Picks: Unique Gift Ideas for Interior Design Lovers</p>
+               
+              </div>
+              </a>
+            </div>
+            <div class="whats-new-card">
+              <a href="#" class="link">
+              <img class="image-size" src="./assets/converted_image (6).jpeg" alt="Black Friday">
+              <div class="content">
+                <div class="label">Shopping</div>
+                <p class="text">14 Best Sleeper Sofas for Hosting Your Holiday Guests</p>
+               
+              </div>
+          </a>
+            </div>
+            <div class="whats-new-card">
+              <a href="#" class="link">
+              <img class="image-size" src="./assets/converted_image (7).jpeg" alt="Black Friday">
+              <div class="content">
+                <div class="label">Shopping</div>
+                <p class="text">Must-Have Decor for the 2024 Holiday Season</p>
+               
+              </div>
+              </a>
+            </div>
+      </div>
+      <!-- Repeat for each card -->
+    </div>
+  </div>
+  <!-- savings-section -->
+  <div id="savings-section">
+    <div class="savings">
+      <div class="saving-text">
+  
+      
+      <div class="saving-heading">Biggest Savings</div>
+      <div>
+          <button class="scroll-button left" id="scroll-left">&lt;</button>
+          <button class="scroll-button right" id="scroll-right">&gt;</button>
+      </div>
+  </div>
+      
+    <div class="savings-container">
+     
+      <div class="savings-content" id="savings-content" >
+        <!-- Add cards dynamically -->
+        <!-- Example Cards -->
+       
+      </div>
+     
+      <div class="scroll-indicator">
+          <div class="scroll-indicator-line" id="indicator-line"></div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- trending section -->
+  <div id="trending-section">
+    <div class="trending-container">
+      <div class="trending-text">
+          <p class="saving-heading">Now Trending</p>
+          <button class="btn">All Furniture</button>
+      </div>
+      <div class="trending-cards">
+          <div class="trending-card hidden-card" style="background-image: url('./assets/t1.png'); width: 650px; height: 390px; @media(max-width:768px) {
+              width: 200px; height: 390px;border-radius: 30px;
+          }">
+              <div class="tcard-content">
+                  <div class="t-data">
+
+                      <h4>Couches Under $1,000</h3>
+                          <span class="arrow-icon">
+                              <i class="fa fa-arrow-right"></i>
+                          </span>
+
+                  </div>
+              </div>
+          </div>
+          <div class="trending-card"
+              style="background-image: url('./assets/t2.png'); width: 200px; height: 400px; border-radius: 30px;">
+              <div class="tcard-content">
+                  <div class="t-data">
+                      <h4>Leather Recliners</h3>
+                          <span class="arrow-icon">
+                              <i class="fa fa-arrow-right"></i>
+                          </span>
+
+
+                  </div>
+              </div>
+          </div>
+          <div class="trending-card"
+              style="background-image: url('./assets/t3.png'); width: 200px; height: 400px; border-radius: 30px;">
+              <div class="tcard-content">
+                  <div class="t-data">
+                      <h4 style="text-align: left;">Dressers Under $400</h3>
+                          <span class="arrow-icon">
+                              <i class="fa fa-arrow-right"></i>
+                          </span>
+
+
+                  </div>
+              </div>
+          </div>
+
+      </div>
+
+
+
+
+      <div class="trending-cards">
+         
+          <div class="trending-card"
+              style="background-image: url('./assets/t4.png'); width: 200px; height: 400px; border-radius: 30px;">
+              <div class="tcard-content">
+                  <div class="t-data">
+                      <h4>Area Rugs</h3>
+                          <span class="arrow-icon">
+                              <i class="fa fa-arrow-right"></i>
+                          </span>
+
+
+                  </div>
+              </div>
+          </div>
+          <div class="trending-card"
+              style="background-image: url('./assets/t6.png'); width: 200px; height: 400px; border-radius: 30px;">
+              <div class="tcard-content">
+                  <div class="t-data">
+                      <h4 style="text-align: left;">Beds</h3>
+                          <span class="arrow-icon">
+                              <i class="fa fa-arrow-right"></i>
+                          </span>
+
+
+                  </div>
+              </div>
+          </div>
+
+          <div class="trending-card hidden-card" style="background-image: url('./assets/t5.png'); width: 650px; height: 390px;">
+              <div class="tcard-content">
+                  <div class="t-data">
+
+                      <h4>Mattresses Under $1,500</h3>
+                          <span class="arrow-icon">
+                              <i class="fa fa-arrow-right"></i>
+                          </span>
+
+                  </div>
+              </div>
+          </div>
+
+      </div>
+  </div>
+  </div>
+  <!-- discover section -->
+
+
+  <div id="discover-section">
+    <div class="style-container">
+      <div class="discover-text">
+          <p class="new-heading">Discover Your Style</p>
+          <button class="btn">All Styles</button>
+      </div>
+      <div class="style-grid">
+          <a href=""> <img src="./assets/d1.jpg" alt="Traditional" class="discover-image"></a>
+         <a href="">
+         <img src="./assets/d2.jpg"alt="Farmhouse" class="discover-image">
+      </a>
+      <a href="">  
+          <img src="./assets/d3.jpg" alt="Mid Century Modern" class="discover-image"></a>
+      <a href="">
+          <img src="./assets/d4.jpg" class="discover-image" alt="Coastal">
+      </a>
+        
+        
+        
+      </div>
+  </div>
+  </div>
+  <!-- shop section -->
+  <div id="shop-section">
+    <div id="shop-section">
+      <div class="shop-text">
+  
+      <div class="shop-heading">
+          Shop New Brands
+      </div>
+      <div class="scroll-controls">
+          <button id="scroll-left-s" class="scroll-btn">&lt;</button>
+          <button id="scroll-right-s" class="scroll-btn">&gt;</button>
+        </div>
+      </div>
+      <div id="shops-content" class="shops-container">
+        <!-- Dynamic cards will be loaded here -->
+      </div>
+     
+      <div class="scroll-indicator-s">
+        <div id="indicator-line-s"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- gallery section -->
+  <div id="gallery-section">
+    <div class="follow-section">
+      <h2>Follow Furniture.com</h3>
+      <div class="social-icons">
+        <a href="#" target="_blank" class="social-icon">
+          <i class="fa-brands fa-instagram fa-2xl" style="color: #000000;"></i>         
+           <a href="#" target="_blank" class="social-icon">
+          <i class="fa-brands fa-facebook fa-2xl" style="color: #000000;"></i>          </a>
+        </a>
+        <a href="#" target="_blank" class="social-icon">
+         <i class="fa-brands fa-tiktok fa-2xl" style="color: #000000;"></i>
+        </a>
+        <a href="#" target="_blank" class="social-icon">
+          <i class="fa-brands fa-pinterest fa-2xl" style="color: #000000;"></i>          </a>
+      </div>
+    </div>
+
+
+  <div class="gallery" >
+      <div class="grid-section left-grid">
+          <img class="gallery-image" src="./assets/g1.jpg" alt="Image 1">
+         
+      </div>
+      <div class="middle-section">
+          <img class="gallery-image" src="./assets/g2.jpg" alt="Image 1">
+      </div>
+      <div class="">
+          <img class="gallery-image" src="./assets/g3.jpg" alt="Image 1">
+         
+      </div>
+  </div>
+
+  </div>
+
+</div>
+  <!-- brands section -->
+  <div id="brands-section">
+    <div class="brands-section">
+      <h2>Discover More Brands You’ll Love</h2>
+      <div class="brands-grid">
+        <!-- Replace the src attribute with actual paths to your brand logos -->
+        <img src="./assets/brands/b1.jpg" alt="Raymour & Flanigan">
+        <img src="./assets/brands/b2.jpg" alt="Bloomingdales">
+        <img src="./assets/brands/b3.jpg" alt="GW Gardner White">
+        <img src="./assets/brands/b4.jpg" alt="Big Sandy">
+        <img src="./assets/brands/b5.jpg" alt="Rooms to Go">
+        <img src="./assets/brands/b6.jpg" alt="HOM Furniture">
+        <img src="./assets/brands/b7.jpg" alt="Mor">
+        <img src="./assets/brands/b8.jpg" alt="Lulu and Georgia">
+        <img src="./assets/brands/b9.jpg" alt="Mathis Home">
+        <img src="./assets/brands/b10.jpg" alt="Kittle's Furniture">
+        <img src="./assets/brands/b11.jpg" alt="Heller">
+        <img src="./assets/brands/b12.jpg" alt="MINE">
+        <img src="./assets/brands/b13.jpg" alt="Lamps Plus">
+        <img src="./assets/brands/b14.jpg" alt="RC Willey">
+        <img src="./assets/brands/b15.jpg" alt="Cardi's">
+        <img src="./assets/brands/b16.jpg" alt="Slumberland Furniture">
+        <img src="./assets/brands/b17.jpg" alt="Hudson's">
+        <img src="./assets/brands/b18.jpg" alt="Bel Furniture">
+        <img src="./assets/brands/b19.jpg" alt="Scout Design Studio">
+        <img src="./assets/brands/b20.jpg"alt="Levin Furniture">
+        <img src="./assets/brands/b21.jpg" alt="Old Brick">
+        <img src="./assets/brands/b23.jpg" alt="Bernie & Phyl's">
+        <img src="./assets/brands/b18.jpg" alt="One Kings Lane">
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- newsletter section -->
+  <div id="newsletter-section">
+    <div class="newsletter-section">
+      <h2>
+        Your new 
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 32 32" class="icon-couch">
+          <g clip-path="url(#Icon-FurnitureArmchair_svg__a)">
+            <path fill="currentColor" fill-rule="evenodd" d="M8.838 8.084a4.32 4.32 0 0 1 3.06-1.268h8.181c1.195 0 2.278.485 3.06 1.268a4.32 4.32 0 0 1 1.268 3.06v.591a3.1 3.1 0 0 1 1.635-.46h.707c.865 0 1.65.353 2.216.919s.919 1.351.919 2.217v5.218c0 .866-.352 1.65-.919 2.217a3.13 3.13 0 0 1-2.216.918h-2.342v2.124h-1.5v-2.124H9.07v2.124h-1.5v-2.124H5.23c-.866 0-1.65-.352-2.217-.918a3.13 3.13 0 0 1-.918-2.217v-5.21c0-.865.352-1.65.918-2.216a3.13 3.13 0 0 1 2.217-.918h.706c.6 0 1.16.168 1.635.46v-.601c0-1.195.486-2.278 1.268-3.06m.232 3.06v4.73q.324-.107.682-.108h12.474q.358.001.681.109v-4.732c0-.78-.316-1.486-.828-1.999a2.82 2.82 0 0 0-2-.828h-8.181c-.78 0-1.486.316-2 .828a2.82 2.82 0 0 0-.828 2m13.837 6.803a.68.68 0 0 0-.681-.68H9.752a.677.677 0 0 0-.682.68v1.145h-1.5V14.42c0-.452-.182-.86-.479-1.156a1.63 1.63 0 0 0-1.156-.48H5.23c-.452 0-.86.183-1.156.48a1.63 1.63 0 0 0-.48 1.156v5.21c0 .45.183.859.48 1.155.296.297.704.479 1.156.479h21.52c.451 0 .86-.182 1.156-.479.296-.296.479-.704.479-1.156V14.41c0-.451-.183-.86-.48-1.155a1.63 1.63 0 0 0-1.155-.48h-.707c-.452 0-.86.183-1.156.48a1.63 1.63 0 0 0-.479 1.156v4.68h-1.5z" clip-rule="evenodd"></path>
+          </g>
+          <defs>
+            <clipPath id="Icon-FurnitureArmchair_svg__a">
+              <path d="M0 0h32v32H0z"></path>
+            </clipPath>
+          </defs>
+        </svg>
+        is just around the corner
+      </h2>
+      <p>Sign up for insight into the latest design trends from our newsletter</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="@ email" required>
+        <button type="submit">Submit</button>
+      </form>
+      <p class="disclaimer">By signing up, you agree to receive email marketing.</p>
+    </div>
+    
+  </div>
+
+  <!-- footer section -->
+  <div id="footer-container">
+    <footer>
+      <div class="main-footer">
+     <img src="./assets/logo-footer.png" style="width: 200px; height: 40px; margin-top: 20px;" alt="">
+    
+      <div class="footer-container">
+          <!-- Company Section -->
+          <div class="footer-section">
+              <h3>Company</h3>
+              <ul>
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Contact Us</a></li>
+              </ul>
+          </div>
+  
+          <!-- For Retailers Section -->
+          <div class="footer-section">
+              <h3>For Retailers</h3>
+              <ul>
+                  <li><a href="#">Join Our Site</a></li>
+              </ul>
+          </div>
+  
+          <!-- Resources Section -->
+          <div class="footer-section">
+              <h3>Resources</h3>
+              <ul>
+                  <li><a href="#">Brands</a></li>
+                  <li><a href="#">Store Directory</a></li>
+                  <li><a href="#">Collections</a></li>
+                  <li><a href="#">Inspiration</a></li>
+                  <li><a href="#">Black Friday Sale</a></li>
+              </ul>
+          </div>
+  
+          <!-- Follow Us Section -->
+          <div class="footer-section">
+              <h3>Follow Us</h3>
+              <ul class="social-links">
+                  <li><a href="#">
+                          <i class="fa-brands fa-instagram fa-xl" style="color: white;"></i>
+                          Instagram
+                      </a>
+  
+                  </li>
+                  <li><a href="#">             <i class="fa-brands fa-facebook fa-xl" style="color: white;"></i>          </a>
+                      Facebook</a></li>
+                  <li><a href="#">             <i class="fa-brands fa-pinterest fa-xl" style="color: white;"></i>          </a>
+                      Pinterest</a></li>
+                  <li><a href="#">            <i class="fa-brands fa-linkedin fa-xl" style="color: white;"></i>          </a>
+                      LinkedIn</a></li>
+              </ul>
+          </div>
+      </div>
+      <div class="footer-copyright fc-p">
+          <p>&copy; 2024 Furniture.com. All rights reserved.</p>
+      </div> 
+  </div>
+  
+  <div class="copy-container">
+  
+  
+  <div class="footer-copyright">
+      <p>&copy; 2024 Furniture.com. All rights reserved.</p>
+  </div> 
+  
+      <!-- Privacy Notice Section (Mobile only) -->
+      <div class="privacy-section">
+          <ul>
+              <li><a href="#">Privacy Notice</a></li>
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Your Privacy Choices</a></li>
+               <li><a href="#">Search it, find it, get it</a></li>
+          </ul>
+      </div>
+  </div>
+  
+     
+      
+  
+  </footer>
+  </div>
+
+  <!-- Include app.js -->
+  <script src="app.js"></script>
+
+</body>
+</html>
