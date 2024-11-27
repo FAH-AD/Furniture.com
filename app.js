@@ -126,9 +126,93 @@
       mattresses: {
         leftMenu: ["King Size", "Queen Size", "Twin Size"],
         middleContent: {
-          "King Size": "Luxury mattresses for a perfect night's sleep.",
-          "Queen Size": "Comfortable queen-size mattresses.",
-          "Twin Size": "Compact and affordable twin mattresses.",
+          "King Size":[
+
+            {
+              title: "Sectionals",
+              image: "./assets/navbar/n2_1.jpg"
+            },
+            {
+              title: "Sofas & Couches",
+             image: "./assets/navbar/n2_2.jpg"
+            },
+            {
+              title: "TV Stands",
+              image: "./assets/navbar/n2_4.jpg"
+            },
+            {
+              title: "Sectionals",
+              image: "./assets/navbar/n2_1.jpg"
+            },
+            {
+              title: "Sofas & Couches",
+             image: "./assets/navbar/n2_2.jpg"
+            },
+            {
+              title: "TV Stands",
+              image: "./assets/navbar/n2_4.jpg"
+            },
+            {
+              title: "Recliners",
+              image: "./assets/navbar/n2_5.jpg"
+            },
+          
+          ] ,
+          "Queen Size":[
+            {
+              title: "Recliners",
+              image: "./assets/navbar/n2_5.jpg"
+            },
+            {
+              title: "Sofas & Couches",
+             image: "./assets/navbar/n2_2.jpg"
+            },
+            {
+              title: "TV Stands",
+              image: "./assets/navbar/n2_4.jpg"
+            },
+            {
+              title: "Recliners",
+              image: "./assets/navbar/n2_5.jpg"
+            },
+            {
+              title: "Sofas & Couches",
+             image: "./assets/navbar/n2_2.jpg"
+            },
+            {
+              title: "TV Stands",
+              image: "./assets/navbar/n2_4.jpg"
+            },
+
+          ],
+          "Twin Size": [
+            {
+              title: "Sofas & Couches",
+             image: "./assets/navbar/n2_2.jpg"
+            },
+            {
+              title: "Recliners",
+              image: "./assets/navbar/n2_5.jpg"
+            },
+            {
+              title: "TV Stands",
+              image: "./assets/navbar/n2_4.jpg"
+            },
+            {
+              title: "Sofas & Couches",
+             image: "./assets/navbar/n2_2.jpg"
+            },
+            {
+              title: "Recliners",
+              image: "./assets/navbar/n2_5.jpg"
+            },
+            {
+              title: "TV Stands",
+              image: "./assets/navbar/n2_4.jpg"
+            },
+            
+
+          ],
         },
         rightImage: "./assets/navbar/n3.jpg",
 

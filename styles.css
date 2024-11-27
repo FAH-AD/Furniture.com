@@ -383,7 +383,7 @@ border-bottom: 2px solid rgb(41, 40, 40);
 
 /* Black Friday Sale */
 .black-friday a {
-color: #ff6f61;
+  color:rgb(224, 1, 77) !important
 }
 
 
@@ -438,6 +438,11 @@ border: none;
 
 .nav-item.active {
 border-bottom: 3px solid #000; /* Customize border color and size */
+}
+
+.nav-item.active a{
+  color:rgb(224, 1, 77) !important
+
 }
 .right-content {
 border-left: 1px solid rgba(105, 105, 105,0.3);
