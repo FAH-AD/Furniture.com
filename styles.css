@@ -222,16 +222,14 @@ body {
 
 
 .dropdown-container {
-display: none; /* Hidden by default */
-background: #fff;
-border-top: 1px solid #ddd;
-box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-padding-bottom: 20px ;
+  display: block;
+  height: 450px;
+ 
 }
-
 .dropdown-content {
 display: flex;
 gap: 20px;
+height: 450px;
 max-width: 1200px;
 margin: 0 auto; /* Center the content */
 }
@@ -345,6 +343,9 @@ text-decoration: underline;
 /* navbar.css */
 
 /* General Navbar Styling */
+.navbar-container{
+  z-index: 999;
+}
 .navbar {
 display: flex;
 justify-content: center;
@@ -367,7 +368,7 @@ position: relative;
 
 .nav-item a {
 display: block;
-padding: 15px 20px;
+padding: 15px 15px;
 text-decoration: none;
 color: black;
 text-wrap: nowrap;
@@ -388,16 +389,21 @@ border-bottom: 2px solid rgb(41, 40, 40);
 
 
 .dropdown-container {
-display: none; /* Hidden by default */
+display: none; 
 background: #fff;
 border-top: 1px solid #ddd;
 box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 padding-bottom: 20px ;
+/* height: 0; */
+width: 100%;
+position: absolute;
 }
 
 .dropdown-content {
 display: flex;
+z-index: 999;
 gap: 20px;
+
 max-width: 1200px;
 margin: 0 auto; /* Center the content */
 }

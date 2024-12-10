@@ -220,8 +220,55 @@
       dining: {
         leftMenu: ["Dining Tables", "Chairs", "Bar Stools"],
         middleContent: {
-          "Dining Tables": "Elegant dining tables for every home.",
-          "Chairs": "Stylish chairs to complete your dining set.",
+          "Dining Tables": [
+            {
+              title: "TV Stands",
+              image: "./assets/navbar/n2_4.jpg"
+            },
+            {
+              title: "Sofas & Couches",
+             image: "./assets/navbar/n2_2.jpg"
+            },
+            {
+              title: "Recliners",
+              image: "./assets/navbar/n2_5.jpg"
+            },
+            {
+              title: "Sectionals",
+              image: "./assets/navbar/n2_1.jpg"
+            },
+            {
+              title: "Sofas & Couches",
+             image: "./assets/navbar/n2_2.jpg"
+            },
+          ],
+          "Chairs": [
+            {
+              title: "Recliners",
+              image: "./assets/navbar/n2_5.jpg"
+            },
+            {
+              title: "TV Stands",
+              image: "./assets/navbar/n2_4.jpg"
+            },
+            {
+              title: "Sofas & Couches",
+             image: "./assets/navbar/n2_2.jpg"
+            },
+          
+            {
+              title: "Sectionals",
+              image: "./assets/navbar/n2_1.jpg"
+            },
+            {
+              title: "Sofas & Couches",
+             image: "./assets/navbar/n2_2.jpg"
+            },
+            {
+              title: "TV Stands",
+              image: "./assets/navbar/n2_4.jpg"
+            },
+          ],
           "Bar Stools": "Modern bar stools for your kitchen counter.",
         },
         rightImage: "./assets/navbar/n4.jpg",
@@ -309,7 +356,7 @@
       populateDropdown(menuId);
 
       // Show the dropdown
-      dropdownContainer.stop().slideDown();
+      // dropdownContainer.stop().slideDown(500);
     },
     function () {
       // Leave hover effect for navbar item
@@ -372,6 +419,9 @@
 
     // Activate the first item by default
     $(".left-menu li").first().trigger("mouseenter");
+
+
+    $(".dropdown-container").stop(true, true).slideDown(500);
   }
 });
 
