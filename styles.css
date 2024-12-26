@@ -224,6 +224,7 @@ body {
 .dropdown-container {
   display: block;
   height: 450px;
+  z-index: 999;
  
 }
 .dropdown-content {

@@ -556,6 +556,65 @@ $(document).ready(function () {
     updateIndicatorLine();
   });
 
+  // top component for sofa section
+  $(document).ready(function () {
+    // Load the savings component
+    
+      // After the component is loaded, attach the logic
+      const scrollContent = $("#top-content"); // Ensure #savings-content exists in savings.html
+      const indicatorLine = $("#indicator-line");
+  
+      function updateIndicatorLine() {
+        const contentWidth = scrollContent[0].scrollWidth; // Total scrollable width
+        const visibleWidth = scrollContent[0].clientWidth; // Width of the visible container
+        const scrollLeft = scrollContent.scrollLeft(); // Current horizontal scroll position
+        const movementRatio = scrollLeft / (contentWidth - visibleWidth);
+        const indicatorMaxOffset = $(".scroll-indicator").width() - indicatorLine.width();
+        const newOffset = Math.min(Math.max(0, movementRatio * indicatorMaxOffset), indicatorMaxOffset);
+        indicatorLine.css("transform", `translateX(${newOffset}px)`);
+      }
+  
+      scrollContent.on("scroll", updateIndicatorLine);
+  
+      // Buttons for scrolling
+      $("#scroll-left").click(function () {
+        scrollContent.animate({ scrollLeft: "-=300" }, 300, updateIndicatorLine);
+      });
+  
+      $("#scroll-right").click(function () {
+        scrollContent.animate({ scrollLeft: "+=300" }, 300, updateIndicatorLine);
+      });
+  
+      updateIndicatorLine();
+  
+      // Add dynamic cards after loading the savings component
+      const images = [
+          { src: "./assets/sofa-section/large (11).jpg", name: "Fabric Sofas & Couches" },
+          { src: "./assets/sofa-section/large (12).jpg", name: "Leather Sofas & Couches" },
+          { src: "./assets/sofa-section/large (13).jpg", name: "Sleeper Sofas" },
+          { src: "./assets/sofa-section/large (14).jpg", name: "Reclining Sofas" },
+          { src: "./assets/sofa-section/large (15).jpg", name: "Beige and Cream Sofas & Couches" },
+          { src: "./assets/sofa-section/large (16).jpg", name: "Gray Sofas & Couches" },
+          { src: "./assets/sofa-section/large (17).jpg", name: "Sale Sofas & Couches" },
+          
+         
+        ];
+  
+      images.forEach((image) => {
+        scrollContent.append(`
+         <div class="item-card-t" >
+            <a href='#' class="link">
+            <img src="${image.src}" alt="${image.name}">
+              <div class="item-name">${image.name}</div>
+            </a>
+              
+            </div>
+        `);
+      });
+  
+      // Recalculate the scroll indicator after adding cards
+      updateIndicatorLine();
+    });
 
 
 

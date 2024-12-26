@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel Design</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .carousel-container {
+            width: 400px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-wrapper {
+            position: relative;
+            overflow: hidden;
+            height: 200px;
+            border-radius: 10px;
+        }
+
+        .images {
+            display: flex;
+            transition: transform 0.3s ease;
+        }
+
+        .images img {
+            width: 100%;
+            flex-shrink: 0;
+            object-fit: cover;
+        }
+
+        .buttons {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+        }
+
+        .buttons button {
+            pointer-events: all;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .progress-bar {
+            margin: 15px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .bar {
+            width: 100px;
+            height: 5px;
+            background: #ddd;
+            position: relative;
+        }
+
+        .bar .indicator {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 33%;
+            background: #000;
+            transition: left 0.3s ease;
+        }
+
+        .color-options {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .color-options div {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid #ccc;
+        }
+
+        .color-options div.active {
+            border-color: #000;
+        }
+
+        .color-1 { background: black; }
+        .color-2 { background: beige; }
+        .color-3 { background: blue; }
+
+    </style>
+</head>
+<body>
+    <div class="carousel-container">
+        <div class="image-wrapper">
+            <div class="images">
+                <img src="image1.jpg" alt="Image 1">
+                <img src="image2.jpg" alt="Image 2">
+                <img src="image3.jpg" alt="Image 3">
+            </div>
+            <div class="buttons">
+                <button class="prev">&#8249;</button>
+                <button class="next">&#8250;</button>
+            </div>
+        </div>
+        <div class="progress-bar">
+            <div class="bar">
+                <div class="indicator"></div>
+            </div>
+        </div>
+        <div class="color-options">
+            <div class="color-1 active" data-image="image1.jpg"></div>
+            <div class="color-2" data-image="image2.jpg"></div>
+            <div class="color-3" data-image="image3.jpg"></div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            const images = $(".images");
+            const totalImages = $(".images img").length;
+            const indicator = $(".indicator");
+            const imageWidth = $(".image-wrapper").width();
+            let currentIndex = 0;
+
+            function updateCarousel() {
+                images.css("transform", `translateX(-${currentIndex * imageWidth}px)`);
+                indicator.css("left", `${(currentIndex / totalImages) * 100}%`);
+            }
+
+            $(".next").click(function () {
+                currentIndex = (currentIndex + 1) % totalImages;
+                updateCarousel();
+            });
+
+            $(".prev").click(function () {
+                currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+                updateCarousel();
+            });
+
+            $(".color-options div").click(function () {
+                const newImage = $(this).data("image");
+                $(".images img:first").attr("src", newImage);
+                $(".color-options div").removeClass("active");
+                $(this).addClass("active");
+            });
+        });
+    </script>
+</body>
+</html>
