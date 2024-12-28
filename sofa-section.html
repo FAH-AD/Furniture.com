@@ -220,34 +220,192 @@
         Sofas & Couches
       </div>
 
-      <div class="filter-container">
-        <div class="filters-section">
-          <div class="filters">
-            <div class="filter-width">
-
-
-              <button class="filter-option">See In Store</button>
-              <button class="filter-option">Sale</button>
-              <button class="filter-option">Color</button>
-              <button class="filter-option">Material</button>
-              <button class="filter-option">Price</button>
-              <button class="filter-option">Width</button>
-              <button class="filter-option">Style</button>
-              <button class="filter-option">Retailer</button>
-              <button class="filter-option">Brand</button>
-            </div>
-            <button class="filter-option">More filters</button>
-          </div>
-          <div class="actions">
-            <button class="compare-btn">Compare</button>
-            <select class="sort-dropdown">
-              <option value="recommended" selected>Sort by Recommended</option>
-              <option value="low-to-high">Price: Low to High</option>
-              <option value="high-to-low">Price: High to Low</option>
-            </select>
-          </div>
-        </div>
+  <div class="filter-container">
+  <div class="filters-section">
+    <div class="filters">
+      <div class="filter-width">
+        <button class="filter-option" onclick="openFilterPanel('seeInStore')" data-target="#seeInStore">See In Store</button>
+        <button class="filter-option" onclick="openFilterPanel('sale')" data-target="#sale">Sale</button>
+        <button class="filter-option" onclick="openFilterPanel('color')" data-target="#color">Color</button>
+        <button class="filter-option" onclick="openFilterPanel('material')" data-target="#material">Material</button>
+        <button class="filter-option" onclick="openFilterPanel('price')" data-target="#price">Price</button>
+        <button class="filter-option" onclick="openFilterPanel('width')" data-target="#width">Width</button>
+        <button class="filter-option" onclick="openFilterPanel('style')" data-target="#style">Style</button>
+        <button class="filter-option" onclick="openFilterPanel('retailer')" data-target="#retailer">Retailer</button>
+        <button class="filter-option" onclick="openFilterPanel('brand')" data-target="#brand">Brand</button>
       </div>
+      <button class="filter-option" data-target="#moreFilters">More filters</button>
+    </div>
+    <div class="actions-f">
+      <button class="compare-btn">Compare</button>
+      <select class="sort-dropdown">
+        <option value="recommended" selected>Sort by Recommended</option>
+        <option value="low-to-high">Price: Low to High</option>
+        <option value="high-to-low">Price: High to Low</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="side-panel"  id="filterPanel">
+  <div class="side-panel-header">
+    <h3>Filters</h3>
+    <button class="close-btn" onclick="closeFilterPanel()">✖</button>
+  </div>
+  <div class="side-panel-content">
+    <div class="filter-section" id="seeInStore">
+      <div class="store-section">
+        <div>
+
+       
+        <h4>See In Store</h4>
+      
+      <p>Filter products on display in a store nearby</p>
+       </div>
+       <label class="toggle-switch">
+        <input type="checkbox">
+        <span class="slider"></span>
+      </label>
+      </div>
+      
+      <input type="text" class="location-input" value="Reston, VA 20190">
+      <div class="distance-options">
+        <label><input type="radio" name="distance"> Within 10 miles</label>
+        <label><input type="radio" name="distance"> Within 25 miles</label>
+        <label><input type="radio" name="distance"> Within 50 miles</label>
+        <label><input type="radio" name="distance"> Within 120 miles</label>
+      </div>
+    </div>
+    <hr>
+    <div class="store-section" id="sale">
+      <div>
+
+     
+      <h4>Sale</h4>
+    
+   
+     </div>
+     <label class="toggle-switch">
+      <input type="checkbox">
+      <span class="slider"></span>
+    </label>
+    </div>
+    <hr>
+    
+    <div class="filter-section" id="color">
+      <h4>Color</h4>
+      <div class="color-options-f">
+        <div class="color-item">
+          <div class="color-circle" style="background-color: rgb(234, 151, 151);"></div>
+          <span>Red</span>
+        </div>
+         <div class="color-item">
+          <div class="color-circle" style="background-color: red;"></div>
+          <span>Red</span>
+        </div>
+        
+        <div class="color-item">
+          <div class="color-circle" style="background-color: blue;"></div>
+          <span>Blue</span>
+        </div>
+        <div class="color-item">
+          <div class="color-circle" style="background-color: blue;"></div>
+          <span>Blue</span>
+        </div>
+        <!-- Add more colors similarly -->
+      </div>
+    </div>
+    <hr>
+    <div class="filter-section" id="material">
+      <h4>Material</h4>
+      <div class="material-options">
+        <label><input type="checkbox">Fabric</label>
+        <label><input type="checkbox">Leather</label>
+        <label><input type="checkbox">Wood</label>
+        <label><input type="checkbox">Polyester</label>
+        <label><input type="checkbox">Metal</label>
+        <label><input type="checkbox">Velvet</label>
+        <label><input type="checkbox">Linen</label>
+        <label><input type="checkbox">Faux Leather</label>
+        <label><input type="checkbox">Cotton</label>
+        <!-- Add more materials similarly -->
+      </div>
+    </div>
+    <hr>
+    <div class="filter-section" id="price">
+  <h4>Price</h4>
+  <div class="filter-price">
+    <label><input class="font-size" type="checkbox" name="price" value="0-750"> $0 - $750</label>
+    <label><input type="checkbox" name="price" value="750-1000"> $750 - $1,000</label>
+    <label><input type="checkbox" name="price" value="1000-1500"> $1,000 - $1,500</label>
+    <label><input type="checkbox" name="price" value="1500-2000"> $1,500 - $2,000</label>
+    <label><input type="checkbox" name="price" value="2000-4000"> $2,000 - $4,000</label>
+    <label><input type="checkbox" name="price" value="4000-5000"> $4,000 - $5,000</label>
+    <label><input type="checkbox" name="price" value="5000-6000"> $5,000 - $6,000</label>
+    <label><input type="checkbox" name="price" value="6000+"> $6,000+</label>
+  </div>
+</div>
+    <hr>
+    <div class="filter-section" id="width">
+      <h4>Width</h4>
+      <label><input type="checkbox">Small (Under 70")</label>
+      <label><input type="checkbox">Medium (70" - 86")</label>
+      <label><input type="checkbox">Large (87" - 100")</label>
+      <label><input type="checkbox">Extra Large (Over 100")</label>
+    </div>
+    <hr>
+    <div class="filter-section" id="style">
+      <h4>Style</h4>
+      <div class="style-options">
+        <label><input type="checkbox">Contemporary</label>
+        <label><input type="checkbox">Modern</label>
+        <label><input type="checkbox">Transitional</label>
+        <label><input type="checkbox">Traditional</label>
+        <label><input type="checkbox">Casual</label>
+        <label><input type="checkbox">Mid-Century Modern</label>
+        <label><input type="checkbox">Glam</label>
+        <label><input type="checkbox">Cottage</label>
+        <!-- Add more styles similarly -->
+      </div>
+    </div>
+    
+<hr>
+    <div class="filter-section" id="retailer">
+      <h4>Retailer</h4>
+      <div class="retailer-options">
+        <label><input type="checkbox">Amazon</label>
+        <label><input type="checkbox">American Signature Furniture</label>
+        <label><input type="checkbox">Bernie & Phyl's Furniture</label>
+        <label><input type="checkbox">Big Sandy Home Furnishings</label>
+        <label><input type="checkbox">Bloomingdale's</label>
+        <label><input type="checkbox">Cardi's Furniture & Mattresses</label>
+        <!-- Add more retailers similarly -->
+      </div>
+    </div>
+    <hr>
+    <div class="filter-section" id="brand">
+      <h4>Brand</h4>
+      <div class="retailer-options">
+        <label><input type="checkbox">Ashley Furniture</label>
+        <label><input type="checkbox">Bernhardt Furniture</label>
+        <label><input type="checkbox">Bernhardt Furniture</label>
+        <label><input type="checkbox">Bernhardt Furniture</label>
+        <label><input type="checkbox">Bernhardt Furniture</label>
+        <label><input type="checkbox">Ashley Furniture</label>
+        <label><input type="checkbox">Ashley Furniture</label>
+        <label><input type="checkbox">Ashley Furniture</label>
+        <label><input type="checkbox">Ashley Furniture</label>
+        <!-- Add more retailers similarly -->
+      </div>
+    </div>
+  </div>
+  <div class="side-panel-footer">
+    <button class="clear-btn">Clear All</button>
+    <button class="results-btn">8804 Results</button>
+  </div>
+</div>
+
+
 
       <div class="carousel-row" id="carouselRow"></div>
     </div>
@@ -993,6 +1151,33 @@
 
 
     });
+
+   function openFilterPanel(sectionId) {
+  const filterPanel = document.getElementById('filterPanel');
+  const section = document.getElementById(sectionId);
+
+  // Open the panel by making it visible
+  filterPanel.style.transform = 'translateX(0)';
+  filterPanel.style.transition = 'transform 0.3s ease-in-out';
+
+  // Scroll to the specific section
+  if (section) {
+    section.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  }
+}
+
+function closeFilterPanel() {
+  const filterPanel = document.getElementById('filterPanel');
+
+  // Close the panel by hiding it
+  filterPanel.style.transform = 'translateX(100%)';
+  filterPanel.style.transition = 'transform 0.3s ease-in-out';
+}
+
+
 
   </script>
 </body>
